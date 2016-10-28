@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> It's a test for dom.js</title>
+    </head>
+    <body>   
+        <ul>
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+        </ul>
+
+        <script src="dom.js"></script>
+        <script>
+
+            
+            console.log(dom());
+            console.log(dom(''));
+            console.log(dom('body'));
+            console.log(dom('<p>Hello</p>'));
+            console.log(dom(document.body));
+            console.log(dom([document.body, document.body]));
+            console.log(dom(document.body.children));
+            console.log(dom(dom('body')));
+
+
+            console.log(dom('ul li:first-child').html('one'));
+            console.log(dom('ul li:first-child').html() === 'one');
+
+            
+            console.log(dom('ul li:last-child').text('three'));
+            console.log(dom('ul li:last-child').text() === 'three');
+
+        
+            dom('ul').append('<li>4</li>');
+            dom('ul').append(document.createElement('li'));
+            dom('ul').append(dom('li:first-child'));
+
+        </script>
+    </body>
+</html>
